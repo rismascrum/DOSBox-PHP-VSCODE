@@ -73,39 +73,39 @@ class CmdHelp extends Command {
     }
 
     private function getCd(IOutputter $outputter){
-        $outputter->printLine("CD display ...");
+        $outputter->printLine("CD displays the name of or changes the current directory");
     }
 
     private function getDir(IOutputter $outputter){
-        $outputter->printLine("DIR Display ...");
+        $outputter->printLine("DIR Displays a list of files and subdirectories in a directory");
     }
 
     private function getExit(IOutputter $outputter){
-        $outputter->printLine("EXIT Display ...");
+        $outputter->printLine("EXIT Quits the CMD.EXE program (command interpreter)");
     }
 
     private function getFormat(IOutputter $outputter){
-        $outputter->printLine("FORMAT Display ...");
+        $outputter->printLine("FORMAT Formats a disk for use with Windows");
     }
 
     private function getHelp(IOutputter $outputter){
-        $outputter->printLine("HELP Display ...");
+        $outputter->printLine("HELP Provides Help information for Windows commands");
     }
 
     private function getLabel(IOutputter $outputter){
-        $outputter->printLine("LABEL Display ...");
+        $outputter->printLine("LABEL Creates, Changes, Deletes the volumes label of a disk");
     }
 
     private function getMkdir(IOutputter $outputter){
-        $outputter->printLine("MKDIR Display ...");
+        $outputter->printLine("MKDIR Creates a directory");
     }
 
     private function getMkfile(IOutputter $outputter){
-        $outputter->printLine("MKFILE Display ...");
+        $outputter->printLine("MKFILE Created a file");
     }
 
     private function getMove(IOutputter $outputter){
-        $outputter->printLine("MOVE Display ...");
+        $outputter->printLine("MOVE Moves one or more files from one directory to another directory");
     }
 
     private function getCommandNotFound(IOutputter $outputter){
