@@ -39,12 +39,30 @@ class CmdMkDir extends Command {
 
     public function execute(IOutputter $outputter){
         for($i=0; $i < $this->getParameterCount(); $i++) {
-            $this->createDirectory($this->params[$i], $this->getDrive());
+            $this->createDirectory($this->params[$i], $this->getDrive(), $outputter);
         }
     }
 
-    public function createDirectory($newDirectoryName, IDrive $drive) {
-        $newDirectory = new Directory($newDirectoryName);
-        $drive->getCurrentDirectory()->add($newDirectory);
+    public function createDirectory($newDirectoryName, IDrive $drive, IOutputter $outputter) {
+        if($this->checkDirExist($newDirectoryName, $outputter)){
+            $newDirectory = new Directory($newDirectoryName);
+            $drive->getCurrentDirectory()->add($newDirectory);
+        }
+    }
+
+    private function checkDirExist($pathName, IOutputter $outputter) {
+        $fsi = $this->getDrive()->getItemFromPath($pathName);
+
+        if ($fsi == null) {
+            return true;
+        }
+
+        if (!$fsi->isDirectory()) {
+            return true;
+        }
+
+        $outputter->printLine("Dir already exist");
+
+        return false;
     }
 }

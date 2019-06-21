@@ -24,7 +24,7 @@ class Console {
 
         $line = "";
 
-        while(strcmp(trim($line), "exit") != 0){
+        while( (strcmp(trim($line), "exit") != 0 ) && ( strcmp(trim($line), "exit gugus") != 0 ) ){
             $this->outputter->newLine();
             $this->outputter->printNoLine($this->drive->getPrompt());
 

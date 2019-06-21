@@ -27,8 +27,23 @@ class CmdMkFile extends Command {
         if(!empty($this->params[1])){
             $fileContent = $this->params[1];
         }
-        $newFile = new File($fileName, $fileContent);
-        $this->getDrive()->getCurrentDirectory()->add($newFile);
+
+        if($this->checkFileExist($fileName, $outputter)){
+            $newFile = new File($fileName, $fileContent);
+            $this->getDrive()->getCurrentDirectory()->add($newFile);
+        }
+    }
+
+    private function checkFileExist($pathName, IOutputter $outputter) {
+        $fsi = $this->getDrive()->getItemFromPath($pathName);
+
+        if ($fsi == null) {
+            return true;
+        }
+
+        $outputter->printLine("File already exist");
+
+        return false;
     }
 
 }
