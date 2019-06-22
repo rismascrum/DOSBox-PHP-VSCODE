@@ -11,7 +11,6 @@ use DOSBox\Command\Library\CmdTime as CmdTime;
 use DOSBox\Command\Library\CmdExit as CmdExit;
 use DOSBox\Command\Library\CmdHelp as CmdHelp;
 use DOSBox\Command\Library\CmdVer as CmdVer;
-use DOSBox\Command\Library\CmdTime as CmdTime;
 
 class CommandFactory {
     private $commands = array();
