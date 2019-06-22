@@ -54,4 +54,5 @@ class CmdTime extends Command {
         $outputter->newLine();
     }
 
+    
 }
