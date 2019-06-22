@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
 
 spl_autoload_register(function ($class_name) {
     $class_name =  str_replace('\\', '/', $class_name);
