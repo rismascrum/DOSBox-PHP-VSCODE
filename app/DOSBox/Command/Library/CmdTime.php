@@ -22,10 +22,6 @@ class CmdTime extends Command {
     }
 
     public function checkParameterValues(IOutputter $outputter) {
-        // for($i=0; $i< $this->getParameterCount(); $i++) {
-        //     if ($this->isDate($this->getParameterAt($i), $outputter))
-        //         return false;
-        // }
         return true;
     }
 
