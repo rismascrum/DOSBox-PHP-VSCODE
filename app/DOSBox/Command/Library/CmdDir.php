@@ -59,6 +59,7 @@ class CmdDir extends Command {
 
     public function printContent($directoryContent, IOutputter $outputter) {
         foreach ($directoryContent as $item) {
+            $outputter->printNoLine($item->currentDate);
             if ($item->isDirectory()) {
                 $outputter->printNoLine("\t\t\t");
                 $outputter->printNoLine("<DIR>");
@@ -75,6 +76,7 @@ class CmdDir extends Command {
     }
 
     public function printFooter($directoryToPrint, IOutputter $outputter) {
+        $outputter->newLine();
         $outputter->printLine("\t" . $directoryToPrint->getNumberOfContainedFiles() . " File(s)");
         $outputter->printLine("\t" . $directoryToPrint->getNumberOfContainedDirectories() . " Dir(s)");
     }

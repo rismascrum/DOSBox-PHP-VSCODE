@@ -15,6 +15,7 @@ class Directory extends FileSystemItem {
     // Adding File and Directory using the same method.
     public function add(FileSystemItem $fileSystemItemToAdd){
         array_push($this->content, $fileSystemItemToAdd);
+        $fileSystemItemToAdd->setCurrentDate();
         if(!$this->hasAnotherParent($fileSystemItemToAdd)){
             $this->removeParent($fileSystemItemToAdd);
         }

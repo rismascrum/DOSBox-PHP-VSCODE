@@ -5,13 +5,14 @@ namespace DOSBox\Filesystem;
 use DOSBox\Filesystem\Directory;
 
 abstract class FileSystemItem {
-    protected $name, $parent;
+    protected $name, $parent, $current_date;
 
     const ILLEGAL_ARGUMENT_TEXT = "Error: A file or directory name may not contain '/', '\', ',', ' ' or ':'";
 
     public function __construct($name, $parent){
         $this->name = $name;
         $this->parent = $parent;
+        $this->currentDate = '';
     }
 
     public function getPath() {
@@ -49,10 +50,19 @@ abstract class FileSystemItem {
         }
 
         $this->name = $newName;
+        
+    }
+
+    public function setCurrentDate() {
+        $this->currentDate = date('d/m/Y H:i A');
     }
 
     public function getName(){
         return $this->name;
+    }
+
+    public function getCurrenDate(){
+        return $this->currentDate;
     }
 
     public abstract function isDirectory();
